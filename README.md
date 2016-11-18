@@ -1,6 +1,7 @@
 # nav_bar_script
 
 <script>
-  $(".nav").find(".active").removeClass("active");
-  $(".nav").find(".passive").addClass("active");
+  $.each($('.nav').find('a'), function() {
+		$(this).parent().addClass(this.pathname === window.location.pathname ? 'active' : '/');
+  });
 </script>
